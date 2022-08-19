@@ -1,13 +1,13 @@
-<img src="https://www.previewsworld.com/SiteImage/MainImage/STL167573.jpg">
+<img src="https://www.previewsworld.com/SiteImage/MainImage/STL167573.jpg" width=300 height=300>
 
 
-Thomas Redding, Human Cleric, Level 1
+<div>Thomas Redding, Human Cleric, Level 1</div>
 
 Quick Stats:
 <table>
 <tr>
 <td>CON: 14</td>
-<td>HP: 10/10</td>
+<td>HP: <%=@HP%>/10</td>
 </tr>
 
 <tr>
@@ -95,5 +95,5 @@ Heal
 <div>@unequipped = <%=@unequipped%> </div>
 <div> params = <%=params%></div>
 
-<div> cookies = <%=cookies.fetch(:test)%>
+<div> session_big_sword = <%=session[:big_sword]%>
 <div> </div>

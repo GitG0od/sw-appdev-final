@@ -3,15 +3,10 @@ class ApplicationController < ActionController::Base
   
   def index
 
-    #A function to let me convert strings to booleans
-    def to_boolean(str)
-      str == 'true'
-    end
-
 
 #Begin logic to switch between wielding mace & shield or big sword
-  if params[:big_sword] != nil
-      @big_sword = params.fetch(:big_sword.to_boolean)
+  if session[:big_sword] != nil
+      @big_sword = session[:big_sword]
   else
     @big_sword = true
   end
@@ -35,23 +30,35 @@ end
 matching_spells = Spell.all
 @list_of_spells = matching_spells.order({ :created_at => :desc })
 
+#HP Tracking
+if session[:damage] != nil
+@damage = session[:damage]
+else
+  @damage = 0
+end
+
 
 #Define key stats which can vary
     @armor = 14 + @shield
+    @HP = 10-@damage
 
 
   render({ :template => "pages/character1.html.erb" })
   end
 
 
+  #Change equipment
   def change_equipment
-    cookies.store(:test, @value)
-    #I can't figure out how to actually write to params. I think I need to go back and find the example from class; right now this isn't working so it just reloads with no value for :big_sword in params
-    if @big_sword == true or nil
-      params[:big_sword] = false
-    elsif @big_sword == false
-      params[:big_sword] = true
+  
+ 
+    if session[:big_sword] == true or nil
+      session[:big_sword] = false
+    else
+      session[:big_sword] = true
     end
+
+
+
     redirect_to("/index")    # I could put in the following:   , {:notice => "Changed Equipment"} 
   end
 
