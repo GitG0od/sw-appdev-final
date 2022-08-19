@@ -31,7 +31,7 @@ matching_spells = Spell.all
 @list_of_spells = matching_spells.order({ :created_at => :desc })
 
 #HP Tracking
-if session[:damage] != nil
+if session[:damage].class == Integer
 @damage = session[:damage]
 else
   @damage = 0
@@ -57,22 +57,24 @@ end
       session[:big_sword] = true
     end
 
-
-
     redirect_to("/index")    # I could put in the following:   , {:notice => "Changed Equipment"} 
   end
 
+#Healing and dealing damage
 
-
- def cast_a_spell
-  # the_id = params.fetch("spell_id")
-  # the_spell = SpellList.where({ :id => the_id }).at(0)
-  # the_spell.destroy
-
-  #This isn't working for some reason, I'm not sure why. I want it to delete the spell from the database when cast.
-  
-  redirect_to("/index" )
+def take_damage
+  @damage = params.fetch(:Damage_taken).to_i
+  session[:damage] += @damage
+  redirect_to("/index")
 end
+
+def heal
+  @healing = params.fetch(:Heal).to_i
+  @healing= @healing * -1
+  session[:damage] += @healing
+  redirect_to("/index")
+end
+
 
 
 

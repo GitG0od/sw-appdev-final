@@ -3,7 +3,7 @@
 
 <div>Thomas Redding, Human Cleric, Level 1</div>
 
-Quick Stats:
+<h4>Quick Stats:</h4>
 <table>
 <tr>
 <td>CON: 14</td>
@@ -50,7 +50,7 @@ Equipment: Chainmail armor, one-handed mace, simple shield, two-handed sword, ca
 </div>
 
 <div>
-Spells:
+<h4>Spells:</h4>
 <table border=1>
 <tr>
 <td>Spell Name</td>
@@ -78,22 +78,37 @@ Spells:
 
 <a href="/spells">Prepare New Spells</a>
 
-
+<h4>HP Tracking:</h4>
 <div>
-Take Damage
+<form action="/damage" method="post">
+
+  <div>
+    <label for="Damage"></label>
+    <input id="Damage" name="Damage_taken" placeholder="Take how much damage?" type="integer">
+  </div>
+
+    <button>
+   Take damage
+  </button>
 </div>
 
 <div>
-Heal
+<form action="/heal" method="post">
+
+  <div>
+    <label for="Heal"></label>
+    <input id="Heal" name="Healing" placeholder="Heal how much?" type="integer">
+  </div>
+
+    <button>
+   Heal
+  </button>
+</form>
 </div>
 
 
 
-<div>Debugging Values </div>
-<div> @big_sword = <%=@big_sword%> </div>
-<div>@weilding = <%=@weilding%> </div>
-<div>@unequipped = <%=@unequipped%> </div>
-<div> params = <%=params%></div>
 
-<div> session_big_sword = <%=session[:big_sword]%>
-<div> </div>
+
+
+

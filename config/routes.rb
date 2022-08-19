@@ -24,4 +24,7 @@ Rails.application.routes.draw do
   get("/change_equipment", { :controller => "application", :action => "change_equipment"})
 
   get("/cast/:spell_id", { :controller => "application", :action => "cast_a_spell"})
+
+post("/heal", { :controller => "application", :action => "heal"})
+post("/damage", { :controller => "application", :action => "take_damage"})
 end
