@@ -51,6 +51,11 @@ matching_spells = Spell.all
     elsif @big_sword == false
       params[:big_sword] = true
     end
-    redirect_to("/")    # I could put in the following:   , {:notice => "Changed Equipment"} 
+    redirect_to("/index")    # I could put in the following:   , {:notice => "Changed Equipment"} 
   end
+
+
+
+
+
 end

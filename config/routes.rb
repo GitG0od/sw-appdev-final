@@ -19,10 +19,9 @@ Rails.application.routes.draw do
 
   #------------------------------
 
-  get("/", { :controller => "application", :action => "index"} )
+  get("/index", { :controller => "application", :action => "index"} )
 
   get("/change_equipment", { :controller => "application", :action => "change_equipment"})
 
+  #get("/cast/:spell", { :controller => "application", :action => "cast_a_spell"})
 end
-
-
