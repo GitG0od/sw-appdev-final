@@ -10,11 +10,12 @@ class ApplicationController < ActionController::Base
 
 
 
-    if params = {}  #This is not durable because I could later add other params; ideally it would just check if params.fetch("big_sword") comes up blank, but I'm not sure how to do that and this works for now.
-      @big_sword = true
-    else
+  if params[:big_sword] != nil
       @big_sword = params.fetch(:big_sword).to_boolean
-    end
+  else
+    @big_sword = true
+  end
+    
 
 if @big_sword == true or @big_sword == nil
     @shield = 0
