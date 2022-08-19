@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
 #Begin logic to switch between wielding mace & shield or big sword
   if params[:big_sword] != nil
-      @big_sword = params.fetch(:big_sword).to_boolean
+      @big_sword = params.fetch(:big_sword.to_boolean)
   else
     @big_sword = true
   end
@@ -53,6 +53,8 @@ matching_spells = Spell.all
     end
     redirect_to("/index")    # I could put in the following:   , {:notice => "Changed Equipment"} 
   end
+
+
 
  def cast_a_spell
   # the_id = params.fetch("spell_id")

@@ -1,8 +1,14 @@
 <div>
   <div>
     <h1>
-      List of all spells
+      Prepare Spells
     </h1>
+  </div>
+
+    <h5>
+     
+    </h5>
+   <a href="/index">Back to character sheet</a> 
   </div>
 </div>
 
@@ -11,7 +17,7 @@
 <div>
   <div>
     <h2>
-      Add a new spell
+      Prepare a spell
     </h2>
 
     <form action="/insert_spell" method="post">
@@ -24,7 +30,7 @@
       </div>
 
       <button>
-        Create spell
+        Prepare a spell
       </button>
     </form>
   </div>
@@ -35,48 +41,24 @@
   <div>
     <table border="1">
       <tr>
-        <th>
-          ID
-        </th>
-
+      
         <th>
           Spells
         </th>
 
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
       </tr>
 
       <% @list_of_spells.each do |a_spell| %>
       <tr>
-        <td>
-          <%= a_spell.id %>
-        </td>
+       
 
         <td>
           <%= a_spell.spells %>
         </td>
 
-        <td>
-          <%= time_ago_in_words(a_spell.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_spell.updated_at) %> ago
-        </td>
+       
 
-        <td>
-          <a href="/spells/<%= a_spell.id %>">
-            Show details
-          </a>
-        </td>
+        
       </tr>
       <% end %>
     </table>
