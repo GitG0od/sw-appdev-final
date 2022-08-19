@@ -69,7 +69,7 @@ def take_damage
 end
 
 def heal
-  @healing = params.fetch(:Heal).to_i
+  @healing = params.fetch(:Healing).to_i
   @healing= @healing * -1
   session[:damage] += @healing
   redirect_to("/index")
