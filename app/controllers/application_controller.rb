@@ -32,7 +32,15 @@ matching_spells = Spell.all
 
 #HP Tracking
 if session[:damage].class == Integer
+
+
+  if session[:damage] >= 0
 @damage = session[:damage]
+  else
+    session[:damage] = 0
+    @damage = session[:damage]
+  end
+
 else
   @damage = 0
 end
