@@ -44,6 +44,8 @@ class SpellListsController < ApplicationController
   end
 
   def destroy
+
+
     the_id = params.fetch("path_id")
     the_spell_list = SpellList.where({ :id => the_id }).at(0)
 
@@ -52,3 +54,6 @@ class SpellListsController < ApplicationController
     redirect_to("/index" )
   end
 end
+
+
+

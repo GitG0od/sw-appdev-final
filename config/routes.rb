@@ -23,5 +23,5 @@ Rails.application.routes.draw do
 
   get("/change_equipment", { :controller => "application", :action => "change_equipment"})
 
-  #get("/cast/:spell", { :controller => "application", :action => "cast_a_spell"})
+  get("/cast/:spell_id", { :controller => "application", :action => "cast_a_spell"})
 end

@@ -54,7 +54,15 @@ matching_spells = Spell.all
     redirect_to("/index")    # I could put in the following:   , {:notice => "Changed Equipment"} 
   end
 
+ def cast_a_spell
+  # the_id = params.fetch("spell_id")
+  # the_spell = SpellList.where({ :id => the_id }).at(0)
+  # the_spell.destroy
 
+  #This isn't working for some reason, I'm not sure why. I want it to delete the spell from the database when cast.
+  
+  redirect_to("/index" )
+end
 
 
 
