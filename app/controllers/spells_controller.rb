@@ -49,6 +49,6 @@ class SpellsController < ApplicationController
 
     the_spell.destroy
 
-    redirect_to("/spells", { :notice => "Spell deleted successfully."} )
+    redirect_to("/index", { :notice => "Spell deleted successfully."} )
   end
 end
