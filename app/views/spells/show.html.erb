@@ -1,0 +1,71 @@
+<div>
+  <div>
+    <h1>
+      Spell #<%= @the_spell.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/spells">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_spell/<%= @the_spell.id %>">
+          Delete spell
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Spells
+      </dt>
+      <dd>
+        <%= @the_spell.spells %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_spell.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_spell.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit spell
+    </h2>
+
+    <form action="/modify_spell/<%= @the_spell.id %>"  method="post" >
+      <div>
+        <label for="spells_box">
+          Spells
+        </label>
+
+        <input type="text" id="spells_box" name="query_spells" value="<%= @the_spell.spells %>">
+      </div>
+
+      <button>
+        Update spell
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

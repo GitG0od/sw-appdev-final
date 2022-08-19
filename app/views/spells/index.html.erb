@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      List of all spells
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new spell
+    </h2>
+
+    <form action="/insert_spell" method="post">
+      <div>
+        <label for="spells_box">
+          Spells
+        </label>
+
+        <input type="text" id="spells_box" name="query_spells">
+      </div>
+
+      <button>
+        Create spell
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Spells
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_spells.each do |a_spell| %>
+      <tr>
+        <td>
+          <%= a_spell.id %>
+        </td>
+
+        <td>
+          <%= a_spell.spells %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_spell.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_spell.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/spells/<%= a_spell.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

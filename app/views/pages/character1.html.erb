@@ -50,7 +50,22 @@ Equipment: Chainmail armor, one-handed mace, simple shield, two-handed sword, ca
 </div>
 
 <div>
-Cast a Spell: Cure Light Wounds, Cure Light Wounds, Bless, Create Water
+Spells:
+<table border=1>
+<tr>
+<td>Spell Name</td>
+<td></td>
+</tr>
+
+<%@list_of_spells.each do |the_spell|%>
+
+<tr>
+<td><%=the_spell.spells%></td>
+<td>Cast</td>
+</tr>
+
+<%end%>
+</table>
 </div>
 
 <div>

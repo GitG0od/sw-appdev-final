@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     end
 
 
-
+#Begin logic to switch between wielding mace & shield or big sword
   if params[:big_sword] != nil
       @big_sword = params.fetch(:big_sword).to_boolean
   else
@@ -29,9 +29,14 @@ elsif @big_sword == false
     @weilding = "Mace and shield"
     @unequipped = "Two-handed Sword"
 end
+#End weapon weilding logic
+
+#Spellcasting
+matching_spells = Spell.all
+@list_of_spells = matching_spells.order({ :created_at => :desc })
 
 
-
+#Define key stats which can vary
     @armor = 14 + @shield
 
 
