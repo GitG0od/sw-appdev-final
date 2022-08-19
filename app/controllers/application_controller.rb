@@ -45,6 +45,7 @@ matching_spells = Spell.all
 
 
   def change_equipment
+    cookies.store(:test, @value)
     #I can't figure out how to actually write to params. I think I need to go back and find the example from class; right now this isn't working so it just reloads with no value for :big_sword in params
     if @big_sword == true or nil
       params[:big_sword] = false

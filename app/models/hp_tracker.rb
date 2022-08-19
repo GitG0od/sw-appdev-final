@@ -1,0 +1,2 @@
+class HpTracker < ApplicationRecord
+end
